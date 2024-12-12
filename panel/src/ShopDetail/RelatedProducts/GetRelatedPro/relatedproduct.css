@@ -1,0 +1,79 @@
+.related-product-wrapper {
+    padding: 20px;
+  }
+  
+  .related-product-head {
+    font-size: 30px;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .add-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #c82c2c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-button:hover {
+    background-color: #e3785b;
+  }
+  
+  .table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .table th, .table td {
+    vertical-align: middle;
+  }
+  
+  .thead-dark th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+
+  .thead-dark th {
+    background-color: #2c3e50;
+    color: white;
+  }
+  
+  /* Align icons in a single line */
+  .action-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Spacing between icons */
+  }
+  
+  .action-icons i {
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Remove button border around trash can */
+  .action-icons button {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Truncated description */
+  .truncated-description {
+    display: inline-block;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .product-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+  }

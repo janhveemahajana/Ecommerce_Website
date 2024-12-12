@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.home,
+.shop,
+.reports,
+.contact,
+.events,
+.support {
+  display: flex;
+  margin-left: 260px;
+  font-size: 2rem;
+}
+.qlik-head{
+  border: 3px solid ;
+}
+.tab{
+  background-color: rgb(245, 248, 248);
+  margin-top: 20px;
+}
+.tab th, tr,td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: roboto;
+  padding: 10px;
+}
+
+.qlik-col1 i{
+  padding: 5px;
+}
+.tab1{
+  background-color: rgb(245, 248, 248);
+  /* margin-top: 50px; */
+  width: 900px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+}
+.home-head{
+  margin-top: 10px;
+}
+.add-button{
+  margin-left: 43rem;
+  padding: 3px 9px;
+}
+.view-sec{
+  margin-top: 20px;
+  border: 1px solid;
+  padding: 30px;
+}

@@ -1,0 +1,87 @@
+.dashboardAdd {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .dashboardAddForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .inputGroup {
+    flex: 1 1 calc(50% - 20px); /* Each input takes up half the width */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .editorGroup {
+    flex: 1 1 100%; /* Editor takes full width */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .buttonGroup {
+    flex: 1 1 100%; /* Buttons take full width */
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  button {
+    border: none;
+    padding: 20px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary {
+    background-color: gray;
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .dashboardAdd {
+    max-width: 800px; /* Set a maximum width for the entire form container */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .inputGroup input {
+    width: 100%; /* Make the inputs adapt to the container width */
+    padding: 8px; /* Add some padding for better UX */
+    font-size: 14px;
+  }
+  
+  .editorGroup .ck-editor {
+    width: 100%; /* Ensure the CKEditor adapts to the container */
+  }
+  
+  .buttonGroup {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  

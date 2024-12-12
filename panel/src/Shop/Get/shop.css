@@ -1,0 +1,133 @@
+/* General styling for container */
+.container-fluid {
+  margin: 0; /* Remove margins around container */
+  padding: 0; /* Remove padding */
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling */
+.home-head {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Add button styling */
+/* Container for the add button to position it properly */
+.add-button-container {
+  display: flex;
+  justify-content: flex-end; /* Align to the right */
+  margin-bottom: 10px; /* Add spacing below the button */
+}
+
+/* Styling for Add button */
+.add-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.add-button:hover {
+  background-color: #218838;
+}
+
+/* Table styling */
+.tab {
+  width: 100%;
+  border-collapse: collapse; /* Removes double borders */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  padding: 0; /* Remove extra padding */
+}
+
+.tab th,
+.tab td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle; /* Align content vertically */
+}
+
+.tab th {
+  background-color: #343a40;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.tab tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tab tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Image styling in table */
+.tab img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for truncated description */
+.truncated-description {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Action buttons container */
+/* Ensure the parent <td> spans the full height of the row */
+.actionButtons {
+  display: flex; /* Align items horizontally */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 15px; /* Space between icons */
+  height: 100%; /* Make sure it fills the cell */
+}
+
+/* Ensure the table cells are vertically aligned */
+.tab td {
+  vertical-align: middle; /* Vertically align content in table cells */
+}
+
+/* Individual Action button icons */
+.actionButtons i {
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.actionButtons i.fa-eye {
+  color: #007bff; /* Blue color for view icon */
+  padding-top: 40px;
+}
+
+.actionButtons i.fa-pen-to-square {
+  color: #ffc107; /* Yellow color for edit icon */
+  padding-top: 40px;
+}
+
+.actionButtons i.fa-trash-can {
+  color: #dc3545; /* Red color for delete icon */
+  padding-top: 40px;
+}
+
+.actionButtons i:hover {
+  transform: scale(1.2);
+}
+
+/* Remove border from Action column */
+.tab td:last-child {
+  border: none;
+}
