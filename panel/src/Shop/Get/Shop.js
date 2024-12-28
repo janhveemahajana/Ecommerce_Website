@@ -45,12 +45,7 @@ export const Shop = () => {
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
 }
 
-  // const truncateText = (text, maxLength) => {
-  //   if (text.length > maxLength) {
-  //     return text.substring(0, maxLength) + "...";
-  //   }
-  //   return text;
-  // };
+
   return (
     <div className="container-fluid">
       <div className="row">

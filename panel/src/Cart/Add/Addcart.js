@@ -54,7 +54,13 @@ const Addcart = () => {
 
   return (
     <div className="addProduct">
-      <Link to={"/cart"}>Back</Link>
+      <Link to="/cart">
+        <i
+          className="fa fa-long-arrow-left"
+          aria-hidden="true"
+          style={{ color: "black", marginRight: "10px" }}
+        ></i>
+      </Link>
       <h3>Add New Product</h3>
       <form className="addProductForm" onSubmit={submitForm}>
         <div className="inputGroup">

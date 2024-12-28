@@ -43,7 +43,7 @@ const CartPage = () => {
           <div className="col-lg-1 col-md-1 col-sm-12"></div>
           <div className="col-lg-8 col-md-8 col-sm-12">
             <h2 className="cart-page">CartPage</h2>
-           <Link to={"/addcartproduct"}><button style={{backgroundColor:"#c82c2c",padding:" 10px 20px", color:"white"}}>Add</button></Link>
+           <Link to={"/addcartproduct"}><button style={{backgroundColor:"#c82c2c",padding:" 10px 20px", color:"white", marginLeft:"58rem"}}>Add</button></Link>
             
             <table className="tab">
               <thead>

@@ -1,0 +1,35 @@
+/* Centering container */
+.contactedit-container {
+    display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items towards the start */
+  height: calc(100vh - 100px); /* Adjust the height to push it slightly up */
+  padding-top: 50px; /* Add some padding from the top */
+  background-color: #f9f9f9; /* Light background for contrast */
+  font-family: Arial, sans-serif; /* Clean font */
+  }
+  
+  /* Card-like form styling */
+  .contactedit-card {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Limit form width */
+    text-align: left; /* Align text to the left */
+  }
+  
+  /* Heading */
+  .contactedit-card h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #28a745;
+  }
+  
+  /* Buttons */
+  .contactedit-card .btn {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  

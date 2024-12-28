@@ -52,7 +52,7 @@ function ViewRelatedPro() {
                 ></i>
               </Link>
               <h3>View Shop Detail</h3>
-              <Link to={`/editrelatedproduct/` + product._id}><i class="fa-regular fa-pen-to-square" style={{color: "blue", marginLeft: "180px", fontSize: "24px"}}></i></Link>
+              <Link to={`/editrelatedproduct/` + product._id}><i className="fa-regular fa-pen-to-square" style={{color: "blue", marginLeft: "180px", fontSize: "24px"}}></i></Link>
             </div>
 
             <form>

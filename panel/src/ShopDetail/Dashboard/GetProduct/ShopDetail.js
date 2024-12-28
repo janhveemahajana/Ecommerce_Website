@@ -76,7 +76,7 @@ const ShopDetail = () => {
                       <h6>{product.title}</h6>
                     </td>
                     <td>
-                      <input
+                      <img
                         type="image"
                         src={`http://localhost:5000${product.image}`}
                         alt={product.title}

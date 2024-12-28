@@ -1,0 +1,60 @@
+/* Contactdata.css */
+
+/* Center the entire page content */
+.contactdata-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: flex-start; /* Align items towards the start */
+  height: calc(100vh - 100px); /* Adjust the height to push it slightly up */
+  padding-top: 50px; /* Add some padding from the top */
+  background-color: #f9f9f9; /* Light background for contrast */
+  font-family: Arial, sans-serif; /* Clean font */
+}
+
+/* Card-like styling for the content */
+.contactdata-card {
+  background-color: #ffffff; /* White background */
+  padding: 50px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  text-align: left; /* Center text */
+  max-width: 400px; /* Constrain width */
+  width: 100%; /* Responsive width */
+}
+
+/* Heading styling */
+.contactdata-card h3 {
+  color: #111411; /* Green color for the header */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Paragraph styling */
+.contactdata-card p {
+  font-size: 18px;
+  color: #333333; /* Dark grey text */
+  margin: 10px 0;
+}
+
+/* Strong labels in paragraphs */
+.contactdata-card p strong {
+  color: #000000; /* Black for labels */
+  font-weight: bold;
+}
+
+/* Edit button styling */
+.contactdata-card .btn {
+  background-color: #007bff; /* Primary blue button */
+  color: #ffffff; /* White text */
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.contactdata-card .btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}

@@ -42,7 +42,7 @@ function ViewCart() {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-header">
-              <Link to="/detail">
+              <Link to="/cart">
                 <i
                   className="fa fa-long-arrow-left"
                   aria-hidden="true"
