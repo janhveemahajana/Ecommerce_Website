@@ -14,6 +14,10 @@ import Exoticfruit from "../modal/Exoticfruitmodel.js";
 import Testimonal from "../modal/testimonalmodel.js";
 import ShopDReview from "../modal/shopDreviewmodel.js";
 import Vegetableshop from "../modal/homevegetableshp.js";
+import Checkout from "../modal/checkoutmodel.js";
+import ContactForm from "../modal/contactformmodel.js";
+import FeaturedProduct from "../modal/featuredpromodel.js";
+import Organic from "../modal/fruithomemodel.js";
 import multer from "multer";
 
 // API's for Related Products
@@ -733,7 +737,6 @@ export const createService = async (req, res) => {
   }
 };
 
-// Get all services
 export const getServices = async (req, res) => {
   try {
     const productData = await Service.find();
@@ -760,7 +763,6 @@ export const getoneServices = async (req, res) => {
     res.status(500).json({ error: error });
   }
 };
-// Update a service
 
 export const updateService = async (req, res) => {
   try {
@@ -820,7 +822,6 @@ export const createFacts = async (req, res) => {
   }
 };
 
-// Get all services
 export const getSFacts = async (req, res) => {
   try {
     const productData = await Facts.find();
@@ -847,7 +848,6 @@ export const getoneFacts = async (req, res) => {
     res.status(500).json({ error: error });
   }
 };
-// Update a service
 
 export const updateFacts = async (req, res) => {
   try {
@@ -1141,7 +1141,6 @@ export const createnewtestimonal = async (req, res) => {
   }
 };
 
-// Get all testimonials
 export const getalltestimonal = async (req, res) => {
   try {
     const testimonials = await Testimonal.find(); // Fetch all testimonials
@@ -1154,7 +1153,6 @@ export const getalltestimonal = async (req, res) => {
   }
 };
 
-// Get a single testimonial by ID
 export const getsingletestimonal = async (req, res) => {
   try {
     const testimonial = await Testimonal.findById(req.params.id);
@@ -1170,7 +1168,6 @@ export const getsingletestimonal = async (req, res) => {
   }
 };
 
-// Update a testimonial
 export const updatetestimonal = async (req, res) => {
   try {
     const { title, description, clientName, profession, image } = req.body;
@@ -1194,7 +1191,6 @@ export const updatetestimonal = async (req, res) => {
   }
 };
 
-// Delete a testimonial
 export const deletetestimonial = async (req, res) => {
   try {
     const testimonial = await Testimonal.findById(req.params.id);
@@ -1336,6 +1332,289 @@ export const deleteHvegetable = async (req, res) => {
     }
 
     await Vegetableshop.findByIdAndDelete(id);
+    res.status(200).json({ msg: "Product deleted successfully" });
+  } catch {
+    res.status(500).json({ error: error });
+  }
+};
+
+// API's for CHECKOUT
+
+export const createcheckout = async (req, res) => {
+  try {
+    const { fname, lname, address, city, postcode, mobile, email, notes } =
+      req.body;
+
+    if (
+      !fname ||
+      !lname ||
+      !address ||
+      !city ||
+      !postcode ||
+      !mobile ||
+      !email ||
+      !notes
+    ) {
+      return res.status(400).json({ msg: "All fields are required" });
+    }
+
+    const newReview = new Checkout({
+      fname,
+      lname,
+      address,
+      city,
+      postcode,
+      mobile,
+      email,
+      notes,
+    });
+    const savedReview = await newReview.save();
+
+    res
+      .status(200)
+      .json({ msg: "Order placed successfully!", data: savedReview });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getAllcheckout = async (req, res) => {
+  try {
+    const productData = await Checkout.find({});
+
+    if (!productData) {
+      return res.status(404).json({ msg: "Data not found" });
+    }
+    res.status(200).json(productData);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const deletecheckout = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Checkout.findByIdAndDelete(id);
+    res.status(200).json({ msg: "Order deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// API's for shop detail REVIEW
+
+export const createcontactform = async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+
+    if (!name || !email || !message) {
+      return res.status(400).json({ msg: "All fields are required" });
+    }
+
+    const newReview = new ContactForm({ name, email, message });
+    const savedReview = await newReview.save();
+
+    res
+      .status(200)
+      .json({ msg: "Message sent successfully!", data: savedReview });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const getAllcontactform = async (req, res) => {
+  try {
+    const productData = await ContactForm.find({});
+
+    if (!productData) {
+      return res.status(404).json({ msg: "Product data not found" });
+    }
+    res.status(200).json(productData);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const deletecontactform = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await ContactForm.findByIdAndDelete(id);
+    res.status(200).json({ msg: "Message deleted successfully!" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+// API Featured Products
+
+export const createfeatured = async (req, res) => {
+  try {
+    const { productname, title, newprice, oldprice } = req.body;
+    const image = req.file ? `/uploads/${req.file.filename}` : "";
+
+    const productData = new FeaturedProduct({
+      productname,
+      title,
+      image,
+      newprice,
+      oldprice,
+    });
+
+    const savedData = await productData.save();
+    res
+      .status(200)
+      .json({ msg: "New Feature added successfully!", data: savedData });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const getAllfeatured = async (req, res) => {
+  try {
+    const productData = await FeaturedProduct.find();
+
+    if (!productData) {
+      return res.status(404).json({ msg: "Feature data not found" });
+    }
+    res.status(200).json(productData);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const getOnefeatured = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const productExist = await FeaturedProduct.findById(id);
+
+    if (!productExist) {
+      return res.status(404).json({ msg: "Feature data not found" });
+    }
+    res.status(200).json(productExist);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const updatefeatured = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { productname, title, newprice, oldprice } = req.body;
+    const image = req.file ? `/uploads/${req.file.filename}` : req.body.image; // Use new image or keep the old one
+
+    const updatedData = await FeaturedProduct.findByIdAndUpdate(
+      id,
+      { productname, title, image, newprice, oldprice },
+      { new: true }
+    );
+
+    res.status(200).json({
+      msg: "Feature updated successfully!",
+      data: updatedData,
+    });
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
+export const deletefeatured = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const productExist = await FeaturedProduct.findById(id);
+
+    if (!productExist) {
+      return res.status(404).json({ msg: "Product not exist" });
+    }
+
+    await FeaturedProduct.findByIdAndDelete(id);
+    res.status(200).json({ msg: "Featured Product deleted successfully" });
+  } catch {
+    res.status(500).json({ error: error });
+  }
+};
+
+// API HOME Fruit SHOP
+
+export const createFruitHome = async (req, res) => {
+  try {
+    const { productname, label, description, price } = req.body;
+    const image = req.file ? `/uploads/${req.file.filename}` : "";
+
+    const productData = new Organic({
+      productname,
+      label,
+      image,
+      description,
+      price,
+    });
+
+    const savedData = await productData.save();
+    res
+      .status(200)
+      .json({ msg: "New Product added successfully!", data: savedData });
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const getAllFruitHome = async (req, res) => {
+  try {
+    const productData = await Organic.find();
+
+    if (!productData) {
+      return res.status(404).json({ msg: "Product data not found" });
+    }
+    res.status(200).json(productData);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const getOneFruitHome = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const productExist = await Organic.findById(id);
+
+    if (!productExist) {
+      return res.status(404).json({ msg: "Product data not found" });
+    }
+    res.status(200).json(productExist);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+};
+
+export const updateFruitHome = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const { productname, label, description, price } = req.body;
+    const image = req.file ? `/uploads/${req.file.filename}` : req.body.image; // Use new image or keep the old one
+
+    const updatedData = await Organic.findByIdAndUpdate(
+      id,
+      { productname, label, image, description, price },
+      { new: true }
+    );
+
+    res.status(200).json({
+      msg: "Product updated successfully!",
+      data: updatedData,
+    });
+  } catch (error) {
+    res.status(500).json({ error });
+  }
+};
+
+export const deleteFruitHome = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const productExist = await Organic.findById(id);
+
+    if (!productExist) {
+      return res.status(404).json({ msg: "Product not exist" });
+    }
+
+    await Organic.findByIdAndDelete(id);
     res.status(200).json({ msg: "Product deleted successfully" });
   } catch {
     res.status(500).json({ error: error });

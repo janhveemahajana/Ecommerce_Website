@@ -21,7 +21,7 @@ const Homevegetableshop = () => {
 
   const deleteUser = async (productId) => {
     await axios
-      .delete(`http://localhost:5000/api/delete/${productId}`)
+      .delete(`http://localhost:5000/api/deletevegetableshop/${productId}`)
       .then((response) => {
         console.log(response);
         setProducts((prevProduct) =>

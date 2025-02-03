@@ -28,6 +28,11 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
+        title: "Organic Product",
+        path: "/organicpro",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
         title: "Facts",
         path: "/facts",
         icon: <IoIcons.IoIosPaper />,
@@ -78,6 +83,11 @@ export const SidebarData = [
       {
         title: "Products",
         path: "/detail",
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: "Featured Product",
+        path: "/featurepro",
         icon: <IoIcons.IoIosPaper />,
       },
       {

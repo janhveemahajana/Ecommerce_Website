@@ -1,5 +1,5 @@
 import express from "express";
-import { create, createbanner, createcart, createcontact, createdeals, createExoticfruit, createFacts, createhero, createHvegetable, createnewcontact, createnewtestimonal, createSDreview, createService, createshop, createslider, dashboardcreate, dashboarddelete, dashboardgetAll, dashboardgetOne, dashboardupdate, deletecart, deletecontact, deletedeals, deleteFacts, deleteHvegetable, deleteSDreview, deleteService, deleteshop, deletetestimonial, deleteUser, getAll, getAllcart, getAllcontact, getAlldeals, getAllHvegetable, getAllSDreview, getAllshop, getalltestimonal, getbanner, getexoticfruit, gethero, getnewcontact, getOne, getOnecart, getOnecontact, getOnedeals, getoneFacts, getOneHvegetable, getOnenewcontact, getoneServices, getOneshop, getServices, getSFacts, getsingletestimonal, sliderdelete, slidergetAll, slidergetone, sliderupdate, update, updatebanner, updatecart, updatecontact, updatedeals, updateExoticfruit, updateFacts, updatehero, updateHvegetable, updatenewcontact, updateService, updateshop, updatetestimonal } from "../controller/usercontroller.js";
+import { create, createbanner, createcart, createcheckout, createcontact, createcontactform, createdeals, createExoticfruit, createFacts, createfeatured, createFruitHome, createhero, createHvegetable, createnewcontact, createnewtestimonal, createSDreview, createService, createshop, createslider, dashboardcreate, dashboarddelete, dashboardgetAll, dashboardgetOne, dashboardupdate, deletecart, deletecheckout, deletecontact, deletecontactform, deletedeals, deleteFacts, deletefeatured, deleteFruitHome, deleteHvegetable, deleteSDreview, deleteService, deleteshop, deletetestimonial, deleteUser, getAll, getAllcart, getAllcheckout, getAllcontact, getAllcontactform, getAlldeals, getAllfeatured, getAllFruitHome, getAllHvegetable, getAllSDreview, getAllshop, getalltestimonal, getbanner, getexoticfruit, gethero, getnewcontact, getOne, getOnecart, getOnecontact, getOnedeals, getoneFacts, getOnefeatured, getOneFruitHome, getOneHvegetable, getOnenewcontact, getoneServices, getOneshop, getServices, getSFacts, getsingletestimonal, sliderdelete, slidergetAll, slidergetone, sliderupdate, update, updatebanner, updatecart, updatecontact, updatedeals, updateExoticfruit, updateFacts, updatefeatured, updateFruitHome, updatehero, updateHvegetable, updatenewcontact, updateService, updateshop, updatetestimonal } from "../controller/usercontroller.js";
 import multer from "multer";
 
 const route = express.Router();
@@ -109,3 +109,27 @@ route.get("/getAllvegetableshop", getAllHvegetable);
 route.get("/getonevegetableshop/:id", getOneHvegetable);
 route.put("/updatevegetableshop/:id", upload.single("image"), updateHvegetable);
 route.delete("/deletevegetableshop/:id", deleteHvegetable);
+
+// Routes for Checkout
+route.post("/createcheckout", createcheckout);
+route.get("/getAllcheckout", getAllcheckout);
+route.delete("/deletecheckout/:id", deletecheckout)
+
+// Routes for Contact form
+route.post("/createcontactform", createcontactform);
+route.get("/getAllcontactform", getAllcontactform);
+route.delete("/deletecontactform/:id", deletecontactform)
+
+// featured products routes
+route.post("/featurecreate", upload.single("image"), createfeatured);
+route.get("/featuregetAll", getAllfeatured);
+route.get("/featuregetone/:id", getOnefeatured);
+route.put("/editfeature/:id", upload.single("image"), updatefeatured);
+route.delete("/deletefeature/:id", deletefeatured)
+
+// home our organic shop
+route.post("/organichomecreate", upload.single("image"), createFruitHome);
+route.get("/organichomegetAll", getAllFruitHome);
+route.get("/organichomegetone/:id", getOneFruitHome);
+route.put("/organichomeupdate/:id", upload.single("image"), updateFruitHome);
+route.delete("/organichomedelete/:id", deleteFruitHome)

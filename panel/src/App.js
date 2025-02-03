@@ -48,6 +48,13 @@ import Homevegetableshop from "./Home/Vegetable Shop/GET/Homevegetableshop";
 import AddvegetableShop from "./Home/Vegetable Shop/ADD/AddvegetableShop";
 import Editvegetableshop from "./Home/Vegetable Shop/EDIT/Editvegetableshop";
 import Viewhomevegeshop from "./Home/Vegetable Shop/VIEW/Viewhomevegeshop";
+import { Featuredpro } from "./ShopDetail/FeaturedProduct/GET/Featuredpro";
+import AddFeaturepro from "./ShopDetail/FeaturedProduct/ADD/AddFeaturepro";
+import EditFeaturepro from "./ShopDetail/FeaturedProduct/EDIT/EditFeaturepro";
+import Horganic from "./Home/Organic Shop/GET/Horganic";
+import Addorganic from "./Home/Organic Shop/ADD/Addorganic";
+import ViewOrganic from "./Home/Organic Shop/VIEW/ViewOrganic";
+import Editorganic from "./Home/Organic Shop/EDIT/Editorganic";
 
 function App() {
   return (
@@ -90,6 +97,12 @@ function App() {
         <Route path="/editvegetableshop/:id" element={<Editvegetableshop/>}/>
         <Route path="/viewvegetableshop/:id" element={<Viewhomevegeshop/>}/> 
 
+        {/* -------Our Organic Product------------- */}
+        <Route path="/organicpro" element={<Horganic/>}/>
+        <Route path="/addorganicpro" element= {<Addorganic/>} />
+        <Route path="/editorganicpro/:id" element={<Editorganic/>}/>
+        <Route path="/vieworganicpro/:id" element={<ViewOrganic/>}/> 
+
         {/* Redirect */}
 
         {/*  -------------- SHOP-Detail -------------- */}
@@ -97,15 +110,18 @@ function App() {
         <Route path="/detail" element={<ShopDetail/>} />
         <Route path="/relatedproducts" element={<RelatedProduct/>}/>
         <Route path="/reviews" element={<Reviews/>}/>
+        <Route path="/featurepro" element={<Featuredpro/>}/>
 
         {/* Add Product */}
  
         <Route path="/dashboardadd" element= {<DashboardAdd/>} />
         <Route path="/addrelatedpro" element= {<AddRelatedPro/>} />
+        <Route path="/addfeaturepro" element= {<AddFeaturepro/>} />
 
         {/* Edit Product */}
         <Route path="/editrelatedproduct/:id" element={<EditRelatedPro/>}/>
         <Route path="/editdashboardp/:id" element={<EditDashboardP/>}/>
+        <Route path="/editfeature/:id" element={<EditFeaturepro/>}/>
 
         {/* View Product */}
         <Route path="/viewdashboardp/:id" element={<ViewDashboard/>}/>
